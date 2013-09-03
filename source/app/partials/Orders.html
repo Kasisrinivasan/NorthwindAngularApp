@@ -1,0 +1,20 @@
+<h1>Northwind - Orders</h1>
+
+<br />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Order Date</th>    
+            <th>Ship Date</th>             
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-ng-repeat="order in orders | orderBy: 'orderDate':reverse | limitTo: 10 ">
+            <td>{{ order.OrderID }}</td>
+            <td>{{ order.OrderDate | date: 'yyyy-MM-dd' }}</td>  
+            <td>{{ order.ShippedDate | date: 'yyyy-MM-dd' }}</td>            
+        </tr>
+    </tbody>
+</table>

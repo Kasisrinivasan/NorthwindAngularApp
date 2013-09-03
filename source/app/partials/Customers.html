@@ -1,0 +1,21 @@
+<h1>Northwind - Customers</h1>
+
+<br />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Company Name</th>
+            <th>Contact</th>             
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-ng-repeat="customer in customers" data-ng-click="getOrderData(customer.CustomerID)">
+            <td>{{ customer.CompanyName }}</td>
+            <td>{{ customer.ContactName }}</td>            
+            <td>{{ customer.Address}} &nbsp; 
+            {{customer.City}} &nbsp; {{ customer.PostalCode }} &nbsp; {{ customer.Country }} </td>
+        </tr>
+    </tbody>
+</table>
