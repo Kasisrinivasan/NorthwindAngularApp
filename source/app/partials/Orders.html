@@ -2,19 +2,29 @@
 
 <br />
 
+<div>
+    <button class="btn btn-primary" onclick="window.location ='#/Customers' ">Go back to Customers</button>
+</div>
+
 <table class="table table-striped">
     <thead>
         <tr>
             <th>Order ID</th>
-            <th>Order Date</th>    
-            <th>Ship Date</th>             
+            <th>Order Date</th>
+            <th>Ship Name</th>
+            <th>Ship Address</th>
+            <th>Ship Date</th>
         </tr>
     </thead>
     <tbody>
-        <tr data-ng-repeat="order in orders | orderBy: 'orderDate':reverse | limitTo: 10 ">
+        <tr data-ng-repeat="order in orders | orderBy: 'orderDate':reverse | limitTo: 500 ">
             <td>{{ order.OrderID }}</td>
-            <td>{{ order.OrderDate | date: 'yyyy-MM-dd' }}</td>  
-            <td>{{ order.ShippedDate | date: 'yyyy-MM-dd' }}</td>            
+            <td>{{ order.OrderDate | date: 'yyyy-MM-dd' }}</td>
+            <td>{{ order.ShipName }}</td>
+            <td>{{order.ShipAddress}}</td>
+            <td>{{ order.ShippedDate | date: 'yyyy-MM-dd' }}</td>
         </tr>
     </tbody>
 </table>
+
+

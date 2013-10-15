@@ -2,7 +2,7 @@
 
 /* http://docs.angularjs.org/guide/dev_guide.e2e-testing */
 
-describe('my app', function() {
+describe('northwindApp', function() {
 
   beforeEach(function() {
     browser().navigateTo('../../app/index.html');
@@ -10,14 +10,14 @@ describe('my app', function() {
 
 
   it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
-    expect(browser().location().url()).toBe("/view1");
+    expect(browser().location().url()).toBe("/Customers");
   });
 
 
-  describe('view1', function() {
+  describe('customers', function() {
 
     beforeEach(function() {
-      browser().navigateTo('#/view1');
+      browser().navigateTo('#/Customers');
     });
 
 

@@ -6,16 +6,22 @@
     <thead>
         <tr>
             <th>Company Name</th>
-            <th>Contact</th>             
+            <th>Contact</th>
             <th>Address</th>
         </tr>
     </thead>
     <tbody>
-        <tr data-ng-repeat="customer in customers" data-ng-click="getOrderData(customer.CustomerID)">
+        <tr data-ng-repeat="customer in customers | limitTo : 10" data-ng-click="redirectToOrder(customer.CustomerID)">
             <td>{{ customer.CompanyName }}</td>
-            <td>{{ customer.ContactName }}</td>            
+            <td>{{ customer.ContactName }}</td>
             <td>{{ customer.Address}} &nbsp; 
             {{customer.City}} &nbsp; {{ customer.PostalCode }} &nbsp; {{ customer.Country }} </td>
         </tr>
     </tbody>
 </table>
+
+
+<ul class="pager">
+    <li><a href="#">&larr; Previous</a></li>
+    <li class="disabled" data-ng-disabled="{{  !hasMoreCustomers }}"><a href="#"> Next &rarr;</a></li>
+</ul>
