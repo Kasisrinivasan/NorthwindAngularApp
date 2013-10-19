@@ -11,17 +11,18 @@
         </tr>
     </thead>
     <tbody>
-        <tr data-ng-repeat="customer in customers | limitTo : 10" data-ng-click="redirectToOrder(customer.CustomerID)">
+        <tr data-ng-repeat="customer in customers | limitTo : 20">
             <td>{{ customer.CompanyName }}</td>
             <td>{{ customer.ContactName }}</td>
             <td>{{ customer.Address}} &nbsp; 
             {{customer.City}} &nbsp; {{ customer.PostalCode }} &nbsp; {{ customer.Country }} </td>
+            <td>
+                <button class="btn btn-mini btn-primary" data-ng-click="redirectToOrder(customer.CustomerID)">View Orders</button></td>
         </tr>
     </tbody>
 </table>
 
-
 <ul class="pager">
     <li><a href="#">&larr; Previous</a></li>
-    <li class="disabled" data-ng-disabled="{{  !hasMoreCustomers }}"><a href="#"> Next &rarr;</a></li>
+    <li class="disabled" data-ng-disabled=""><a href="#">Next &rarr;</a></li>
 </ul>

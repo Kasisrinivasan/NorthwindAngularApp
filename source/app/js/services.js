@@ -55,7 +55,6 @@ angular.module('northwindApp.services', [])
       return {
           orders: _orders,
           customers: _customers,
-          hasMoreCustomers: _customersNextLink != "",
           getCustomers: _getCustomers,
           getOrders: _getOrders
       };
